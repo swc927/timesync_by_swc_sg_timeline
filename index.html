@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TimeSync by SWC</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="bg">
+    <div class="stars"></div>
+    <div class="glow-overlay"></div>
+  </div>
+
+  <main class="container">
+    <header class="header card glow">
+      <h1 class="title gradient-text">TimeSync by SWC</h1>
+      <p class="subtitle">
+        Plan meetings across time zones with calm clarity. Add people, pick a date, then choose one of the suggested overlap windows that keeps every person inside their daytime hours.
+      </p>
+      <noscript>
+        <p class="warning">This app needs JavaScript enabled.</p>
+      </noscript>
+    </header>
+
+    <section class="card glow controls">
+      <h2>Add participant</h2>
+      <div class="grid">
+        <label>
+          <span>Name</span>
+          <input id="nameInput" class="input" placeholder="e.g. Alex" />
+        </label>
+
+        <label>
+          <span>Time zone</span>
+          <select id="tzSelect" class="input"></select>
+        </label>
+
+        <label>
+          <span>Available start hour</span>
+          <input id="startHour" type="number" class="input" min="0" max="23" value="9" />
+        </label>
+
+        <label>
+          <span>Available end hour</span>
+          <input id="endHour" type="number" class="input" min="1" max="24" value="17" />
+        </label>
+
+        <button id="addBtn" class="btn glow">Add</button>
+      </div>
+      <p class="hint">Tip: You can add your own name too.</p>
+    </section>
+
+    <section class="card glow">
+      <h2>Participants</h2>
+      <ul id="list" class="list"></ul>
+      <p class="hint">Click remove to delete a row. Your list is saved in your browser.</p>
+    </section>
+
+    <section class="card glow">
+      <h2>Date and suggestions</h2>
+      <div class="row">
+        <label>
+          <span>Date</span>
+          <input id="dateInput" type="date" class="input" />
+        </label>
+        <button id="suggestBtn" class="btn glow">Suggest overlap windows</button>
+      </div>
+
+      <div id="suggestions" class="suggestions"></div>
+    </section>
+
+    <section class="card glow">
+      <h2>Timeline</h2>
+      <div id="timeline" class="timeline"></div>
+    </section>
+
+    <footer class="footer">
+      <button id="copyBtn" class="btn secondary">Copy plan to clipboard</button>
+      <span class="small">Built with care. All client side. No data leaves your device.</span>
+    </footer>
+  </main>
+
+  <script defer src="app.js"></script>
+</body>
+
+</html>
